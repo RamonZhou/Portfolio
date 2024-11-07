@@ -47,18 +47,18 @@ const schema ={
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url.origin} />
-    <!-- <meta
+    <meta
       property="og:image"
       content={image || "https://kaimhere.tech/og-image.png"}
-    /> -->
+    />
     <!-- Basic Twitter Card tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <!-- <meta
+    <meta
       name="twitter:image"
       content={image || "https://kaimhere.tech/og-image.png"}
-    /> -->
+    />
 
     <link rel="preconnect" href="https://cdn.fontshare.com" />
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
