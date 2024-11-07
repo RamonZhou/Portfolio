@@ -1,0 +1,17 @@
+---
+import Card from "./Card/index.astro";
+import Pulse from "./Pulse.astro";
+import {Icon} from 'astro-icon/components'
+---
+
+<Card colSpan="md:col-span-1" rowSpan="md:row-span-2">
+  <div class="flex justify-between w-full items-start mb-2">
+    <div class="flex flex-col">
+      <h2>Now <a href="https://sive.rs/nowff" target="_blank"><Icon name="ri:question-line" class="h-14px inline color-gray-400" /></a></h2>
+        <span class="text-xs text-gray-500 cursor-pointer">Last update: 11/06/24</span>
+    </div>
+    <Pulse />
+  </div>
+  <p class="text-sm">Studying in Austin, TX.</p>
+  <p class="text-sm">Graduating in May 2026.</p>
+</Card>

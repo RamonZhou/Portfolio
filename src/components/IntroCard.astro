@@ -1,0 +1,68 @@
+---
+import Card from "./Card/index.astro";
+import Button from "./Button.astro";
+import { LINKS } from "../lib/constants";
+import { Icon } from 'astro-icon/components'
+import Tooltip from "./Tooltip/index";
+import { Image } from "astro:assets";
+
+const seed = Math.random() * 17;
+var avatar = "me0.png";
+if (seed > 16) {
+  avatar = "me4.png";
+} else if (seed > 15) {
+  avatar = "me3.png";
+} else if (seed > 10) {
+  avatar = "me2.png";
+} else if (seed > 5) {
+  avatar = "me1.png";
+}
+---
+
+<Card colSpan="md:col-span-3" rowSpan="md:row-span-4">
+  <div class="flex w-full h-full">
+    <div class="flex flex-col justify-between md:max-h-[300px] gap-4">
+      <div class="flex flex-col h-full">
+        <h6 class="text-sm font-light m-0 text-gray-400">welcome</h6>
+        <p class="m-0 font-light text-xl mt-1">
+          Hi, I'm <span class="font-bold text-primary-300">Kaicheng Zhou</span>,
+          a Master’s student in <span class="text-primary-100">Electrical and Computer Engineering</span> at
+          <span class="text-primary-100">the University of Texas at Austin</span>, specializing in Software Engineering and Systems.
+        </p>
+      </div>
+      <div class="flex gap-4">
+        <a href={LINKS.github} aria-label="github profile" target="_blank">
+          <Button aria-label="github profile">
+            <Icon name="ri:github-fill" class="h-6" />
+            <span class="sr-only">GitHub Profile</span>
+          </Button>
+        </a>
+        <a href={LINKS.linkedin} aria-label="linkedin profile" target="_blank">
+          <Button aria-label="linkedin profile">
+            <Icon name="ri:linkedin-box-fill" class="h-6" />
+            <span class="sr-only">Linkedin Profile</span>
+          </Button>
+        </a>
+        <a href={LINKS.blog} aria-label="blog profile" target="_blank">
+          <Button aria-label="blog profile">
+            <Icon name="ri:book-marked-fill" class="h-6" />
+            <span class="sr-only">Personal Blog</span>
+          </Button>
+        </a>
+        <a href={LINKS.email} aria-label="blog profile" target="_blank">
+          <Button aria-label="email">
+            <Icon name="ri:mail-fill" class="h-6" />
+            <span class="sr-only">E-mail Me</span>
+          </Button>
+        </a>
+      </div>
+    </div>
+    <Image
+      width="100"
+      height="150"
+      src={"/" + avatar}
+      class="w-auto max-h-[250px] select-none absolute right-[-30px] bottom-[-32px] z-[-1] opacity-50 md:opacity-100 md:relative md:max-h-[300px] md:right-auto md:z-auto pointer-events-none"
+      alt="avatar of me"
+    />
+  </div>
+</Card>
