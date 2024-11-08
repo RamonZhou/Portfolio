@@ -19,17 +19,17 @@ const { title, description, page, slug, frontmatter } = Astro.props;
 const image = `${Astro.url.origin}/og-image.png`;
 
 const schema ={
-        "@context": "http://schema.org",
-        "@type": "Person",
-        name: "Kaicheng",
-        url: "https://kaimhere.tech",
-        sameAs: [
-          "https://www.linkedin.com/in/kaicheng-zhou-b33a40253/",
-          "https://github.com/ramonzhou",
-        ],
-        image: "https://kaimhere.tech/og-image.png",
-        jobTitle: "Software Developer / Student"
-      };
+    "@context": "http://schema.org",
+    "@type": "Person",
+    name: "Kaicheng",
+    url: "https://kaimhere.tech",
+    sameAs: [
+      "https://www.linkedin.com/in/kaicheng-zhou-b33a40253/",
+      "https://github.com/ramonzhou",
+    ],
+    image: "https://kaimhere.tech/og-image.png",
+    jobTitle: "Software Developer / Student"
+  };
 ---
 
 <!doctype html>
@@ -59,9 +59,21 @@ const schema ={
       name="twitter:image"
       content={image || "https://kaimhere.tech/og-image.png"}
     />
+    <!-- QQ tags -->
+    <meta itemprop="name" content={title} />
+    <meta itemprop="image" content="https://kaimhere.tech/thumbnail.png" />
+    <meta itemprop="description" content="Open to opportunity!" />
 
     <link rel="preconnect" href="https://cdn.fontshare.com" />
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+    <!-- WeChat tags -->
+    <script>
+      var WECHAT_TITLE = "Kaicheng's Portfolio";
+      var WECHAT_DESC = "Open to opportunity!";
+      var WECHAT_IMG = "https://kaimhere.tech/thumbnail.png";
+      var WECHAT_NO_GA = "";
+    </script>
   </head>
   <body
     class="bg-darkslate-700 md:h-screen font-serif"
