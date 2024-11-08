@@ -11,7 +11,9 @@ export default defineConfig({
       "custom-hover": `1px 1px 0`,
     },
     fontFamily: {
-      sans: ["DM Sans"],
+      serif: ["Telex", "Aleo", "Scope One", "Sanchez", "Arial", "Sans-serif"],
+      sans: ["DM Sans", "Arial", "Sans-serif"],
+      time: ["Space Grotesk", "Consolas"],
     },
     gridTemplateRows: {
       "auto-250": "repeat(auto-fill, 250px)",

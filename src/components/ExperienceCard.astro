@@ -1,0 +1,60 @@
+---
+import { undefined } from "astro:schema";
+import Card from "./Card/index.astro";
+
+export interface Props {
+  id?: number;
+  title?: string;
+  time?: string;
+  company?: string;
+  logo?: string;
+  jobTitle?: string;
+  description?: string;
+  bullets?: string[];
+  techStack?: string[];
+  link?: string;
+  rowSpan?: string;
+}
+
+const { title, time, company, logo, jobTitle, description, bullets, techStack, link, rowSpan } = Astro.props;
+---
+
+<Card colSpan="md:col-span-3 lg:col-span-2" rowSpan={rowSpan ? rowSpan : "md:row-span-5"} {...(link ? {href: link} : {})}>
+  <div class="flex flex-col gap-2">
+    <div class="text-sm font-light">
+      <div class="flex flex-col h-full">
+        <!-- <div class="flex flex-row justify-between items-center"> -->
+          <h6 class="text-sm font-bold m-0 text-gray-400">{ title || "Experience" }</h6>
+          <p class="text-sm font-light m-0 text-gray-400">{ time }</p>
+        <!-- </div> -->
+        <div class="mt-1 flex flex-row justify-start items-center">
+          {logo ? <img src={logo} alt={company} class="h-8 w-8 rounded-[10%] mr-2" /> : ""}
+          <p class="m-0 font-bold text-xl mt-1">{ (company || "Personal Project") + (jobTitle ? (" | " + jobTitle) : "") }</p>
+        </div>
+      </div>
+    <div class="flex flex-col mt-2"></div>
+      <p>
+        {description}
+      </p>
+      <ol class="ml-4">
+        {bullets?.map((bullet) => (
+          <li class="list-disc">{bullet}</li>
+        ))}
+      </ol>
+      {
+        techStack?.length && (
+          <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
+            {techStack.map((technology) => (
+              <li class="mr-1.5 mt-2">
+                <div class="flex items-center backdrop-blur-sm rounded-full border border-neutral-700 border-opacity-50 shadow bg-neutral-400/10 px-3 py-0.5 text-sm font-medium leading-5 text-neutral-300">
+                  {technology}
+                </div>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+    </div>
+    </div>
+  </div>
+</Card>

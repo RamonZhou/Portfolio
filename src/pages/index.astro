@@ -8,6 +8,8 @@ import AboutMe from "../components/AboutMe.astro";
 import Now from "../components/Now.astro";
 import Globe from "../components/Globe";
 import { LINKS } from "../lib/constants";
+import ExperienceCard from "../components/ExperienceCard.astro";
+import { experiences } from "../lib/experiences";
 ---
 
 <script>
@@ -22,8 +24,8 @@ import { LINKS } from "../lib/constants";
       { y: ["40%", "0%"], opacity: [0, 1] },
       {
         at: "-0.1",
-        duration: 0.4,
-        delay: stagger(0.3),
+        duration: 0.2,
+        delay: stagger(0.1),
         easing: spring({ velocity: 100, stiffness: 50, damping: 10 }),
       },
     ],
@@ -38,12 +40,11 @@ import { LINKS } from "../lib/constants";
   description="Hi, I'm Kaicheng Zhou, a Master’s student in Electrical and Computer Engineering at the University of Texas at Austin, specializing in Software Engineering and Systems. Currently open for work opportunities!"
 >
   <main
-    class="text-white m-auto p-2 grid gap-2 max-w-6xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:grid-cols-3 md:gap-3 md:p-6 lg:h-screen lg:grid-rows-8 lg:grid-cols-4 lg:gap-4 lg:max-h-[800px]"
+    class="text-white m-auto p-2 grid grid-flow-dense gap-2 max-w-6xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:grid-cols-3 md:gap-3 md:p-6 lg:grid-rows-auto lg:grid-cols-4 lg:gap-4"
   >
     <IntroCard />
-    <ContactsCard hidden="max-md:hidden"/>
     <AboutMe />
-    <ContactsCard hidden="md:hidden"/>
+    <ContactsCard />
     <TimeZone />
     <Now />
     <!-- <Card
@@ -65,13 +66,18 @@ import { LINKS } from "../lib/constants";
     >
       <p>From the past...</p>
     </Card>
+    {
+      experiences.map((experience) => (
+        <ExperienceCard {...experience} />
+      ))
+    }
     <Card colSpan="md:col-span-1" rowSpan="md:row-span-1">
       <p class="text-xs">
         Kaicheng © 2024 · Powered by <a
           href="https://astro.build/"
           target="_blank"
-          class="text-red-500">Astro</a
-        >.
+          class="text-primary-500">Astro</a
+        >
       </p>
     </Card>
   </main>

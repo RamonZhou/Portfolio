@@ -9,7 +9,7 @@ interface Props {
 const { hidden } = Astro.props;
 ---
 
-<Card colSpan="md:col-span-1" rowSpan="md:row-span-4" hidden={hidden || ""}>
+<Card colSpan="md:col-span-1" rowSpan="md:row-span-5 lg:row-span-4" hidden={hidden || ""}>
   <div class="h-full">
     <header class="flex items-center">
       <h1 class="text-white text-xl font-bold">
@@ -26,7 +26,7 @@ const { hidden } = Astro.props;
       <p>25 Summer Internship</p>
       <p>25 Fall Internship</p>
       <p>26 New Grad</p>
-      <p>Any collaborations</p>
+      <p>Collaborations</p>
     </div>
   </div>
 </Card>
