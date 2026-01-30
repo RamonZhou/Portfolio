@@ -4,6 +4,22 @@ export const experiences: Props[] = [
   {
     id: 0,
     title: "INTERNSHIP",
+    time: "May 2025 - August 2025",
+    company: "Meta",
+    logo: "/companies/meta_logo.jpeg",
+    jobTitle: "Software Engineer Intern",
+    description: undefined,
+    bullets: [
+      "Implemented both the back-end and front-end of an Ads unit for Instagram feed using Hack and Python, which can potentially reach 5M users daily, aiming to drive up revenue.",
+      "Ran multiple A/B experiments and wrote SQL queries to analyze data provided by over 1M daily reached users, including exposure, revenue, CTR, etc.",
+      "Extended logging functions for all Ads units in Instagram Reels, providing more analytical logging data without taking up too much database storage.",
+      "Migrated the front-end of several Facebook Ads units to a new internal framework, harnessing more compatibility and consistency without any change in user experience",
+    ],
+    techStack: ["PHP (Hack)", "Python", "Instagram", "Facebook", "Mobile", "Front-End", "Back-End", "Cross-Platform", "A/B Testing", "User Expierience"]
+  },
+  {
+    id: 1,
+    title: "INTERNSHIP",
     time: "July 2023 - April 2024",
     company: "Amazon Web Services",
     logo: "/companies/amazon_web_services_logo.jpeg",
@@ -21,7 +37,7 @@ export const experiences: Props[] = [
     link: "https://github.com/dmlc/dgl",
   },
   {
-    id: 1,
+    id: 2,
     title: "RESEARCH",
     time: "January 2024 - June 2024",
     company: "Scalable Representation Learning on Large Dynamic Graphs",
@@ -31,7 +47,24 @@ export const experiences: Props[] = [
     rowSpan: "md:row-span-4"
   },
   {
-    id: 2,
+    id: 3,
+    title: "PROJECT",
+    time: "Feburary 2025 - March 2025",
+    company: "Simple Path Tracer",
+    // logo: "/companies/amazon_web_services_logo.jpeg",
+    // jobTitle: "Mobile Engineer",
+    description: undefined,
+    bullets: [
+      "Implemented a simple GUI for ray tracing and path tracing renderer using C++.", 
+      "Including features like physically based rendering, nested dielectrics, reflection and refraction, area lights, multiple importance sampling, BVH acceleration, sky box, de-noising, anti-aliasing, etc.",
+    ],
+    techStack: ["C++", "Parallel Computation", "Ray Tracing", "Path Tracing", "Rendering"],
+    // link: "https://github.com/dmlc/dgl",
+    image: "/images/pathtracer.png",
+    rowSpan: "md:row-span-8"
+  },
+  {
+    id: 3,
     title: "PROJECT",
     time: "July 2022 - December 2022",
     company: "Haopenyou (好盆友)",
@@ -49,7 +82,7 @@ export const experiences: Props[] = [
     rowSpan: "md:row-span-4"
   },
   {
-    id: 3,
+    id: 4,
     title: "PROJECT",
     time: "November 2022 - December 2022",
     company: "Smart Home Management System",
@@ -62,7 +95,7 @@ export const experiences: Props[] = [
     rowSpan: "md:row-span-3"
   },
   {
-    id: 4,
+    id: 5,
     title: "PROJECT",
     time: "March 2022 - June 2022",
     company: "MiniSQL",
@@ -75,7 +108,7 @@ export const experiences: Props[] = [
     rowSpan: "md:row-span-3"
   },
   {
-    id: 5,
+    id: 6,
     title: "PROJECT",
     time: "October 2022 - December 2022",
     company: "Mini Linux Kernel",
@@ -88,7 +121,7 @@ export const experiences: Props[] = [
     rowSpan: "md:row-span-3"
   },
   {
-    id: 6,
+    id: 7,
     title: "PROJECT",
     time: "November 2022",
     company: "Simple HTTP Server",
@@ -101,7 +134,7 @@ export const experiences: Props[] = [
     rowSpan: "md:row-span-3"
   },
   {
-    id: 7,
+    id: 8,
     title: "PROJECT",
     time: "April 2022 - June 2022",
     company: "Chessboard Game",
@@ -114,7 +147,7 @@ export const experiences: Props[] = [
     rowSpan: "md:row-span-3"
   },
   {
-    id: 8,
+    id: 9,
     title: "PROJECT",
     time: "January 2023",
     company: "ROOTTOOR",

@@ -11,11 +11,12 @@ export interface Props {
   description?: string;
   bullets?: string[];
   techStack?: string[];
+  image?: string;
   link?: string;
   rowSpan?: string;
 }
 
-const { title, time, company, logo, jobTitle, description, bullets, techStack, link, rowSpan } = Astro.props;
+const { title, time, company, logo, jobTitle, description, bullets, techStack, image, link, rowSpan } = Astro.props;
 ---
 
 <Card colSpan="md:col-span-3 lg:col-span-2" rowSpan={rowSpan ? rowSpan : "md:row-span-5"} {...(link ? {href: link} : {})}>
@@ -40,6 +41,11 @@ const { title, time, company, logo, jobTitle, description, bullets, techStack, l
           <li class="list-disc">{bullet}</li>
         ))}
       </ol>
+      {
+        image && (
+          <img src={image} class="p-8" />
+        )
+      }
       {
         techStack?.length && (
           <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
